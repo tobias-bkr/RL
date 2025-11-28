@@ -1,0 +1,27 @@
+# model
+model_name: "Cartpole-v4"
+d_i: 4
+d_o: 2
+dropout: 0.0
+
+policy: "prob_MLP" # IN("MLP","smolMLP")
+baseline: "run_baseline" # IN("episode_baseline","run_baseline","critic_baseline")
+optimizer: "Adam" # IN("SGD", Adam)
+
+# training
+env_type: "Gymnasium" # IN("Gymnasium")
+env_name: "CartPole"
+
+max_episodes: 1000
+max_steps_per_episode: 10000
+save_interval: 100 # episodes / save
+terminal_log_interval: 10
+tensorboard_log_interval: 1
+render_mode: null
+seed: 1337
+eps: 0.0001
+
+lr: 0.003
+annealing: True
+
+discount_factor: 0.99
